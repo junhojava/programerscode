@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import code.programers.level.one.PrimeNumber;
+import solution.Sieve;
 
 public class FindPrimeNumber {
 
-    PrimeNumber pn;
+    Sieve sieve;
     BiggestNumber bn;
     AlterKey ak;
 
@@ -19,7 +19,7 @@ public class FindPrimeNumber {
 
     FindPrimeNumber()
     {
-        pn = new PrimeNumber();
+        sieve = new Sieve();
         bn = new BiggestNumber();
         ak = new AlterKey();
         bn.list = new ArrayList<>();
@@ -76,15 +76,16 @@ public class FindPrimeNumber {
             parseInt(arr, array);
         }
 
-        pn.init(max+1);
-        pn.primeNumber(max);
+        sieve.length(max + 1);
+        sieve.visitIndex(max);
 
         int result = 0;
 
         for(Entry<Integer, Boolean> entry: map.entrySet())
         {
-            if(pn.primeNumbers().contains(entry.getKey()))
+            if(sieve.getList().contains(entry.getKey())){
                 result++;
+            }
         }
 
         return result;
