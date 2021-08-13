@@ -13,7 +13,6 @@ import solution.Che;
 public class PrimeNumberTest {
 
     Che che = new Che();
-    PrimeNumber pn = new PrimeNumber();
 
     public boolean[] booleanArray(int length){
         boolean[] result = new boolean[length];
@@ -35,9 +34,9 @@ public class PrimeNumberTest {
     @Test
     void testCaseOne()
     {
-        pn.init(11);
-
-        int count = pn.primeNumber(10);
+        che.length(11);
+        che.visitIndex(10);
+        int count = che.getList().size();
 
         assertEquals(4, count);
         assertTrue(Number.isPrimeNumber(2));
@@ -49,9 +48,10 @@ public class PrimeNumberTest {
     @Test
     void testCaseTwo()
     {
-        pn.init(6);
+        che.length(6);
 
-        int count = pn.primeNumber(5);
+        che.visitIndex(5);
+        int count = che.getList().size();
 
         assertEquals(3, count);
     }
