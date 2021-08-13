@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import datatype.Number;
 import solution.Sieve;
 
-public class FindPrimeNumbetTest {
+public class FindPrimeNumber {
 
     AlterKey ak;
     BiggestNumber bn;
