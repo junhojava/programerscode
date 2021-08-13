@@ -13,12 +13,21 @@ public class PrimeNumberTest {
 
     PrimeNumber pn = new PrimeNumber();
 
+    public boolean[] booleanArray(int length){
+        boolean[] result = new boolean[length];
+
+        for(int index=0; index < length; index++)
+            result[index] = false;
+
+        return result;
+    }
+
     @Test
     void tsetInit()
     {
         pn.init(10);
 
-        assertArrayEquals(new boolean[]{false, false, false, false, false, false, false, false, false, false}, pn.table);
+        assertArrayEquals(booleanArray(10), pn.table);
     }
 
     @Test
