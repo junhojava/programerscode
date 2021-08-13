@@ -2,8 +2,12 @@ package code.programers.level.one;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
+
+import datatype.Number;
 
 public class PrimeNumberTest {
 
@@ -25,6 +29,10 @@ public class PrimeNumberTest {
         int count = pn.primeNumber(10);
 
         assertEquals(4, count);
+        assertTrue(Number.isPrimeNumber(2));
+        assertTrue(Number.isPrimeNumber(3));
+        assertTrue(Number.isPrimeNumber(11));
+        assertFalse(Number.isPrimeNumber(10));
     }
 
     @Test
