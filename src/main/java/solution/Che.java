@@ -1,11 +1,15 @@
 package solution;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Che {
     private boolean[] table;
+    List<Integer> list;
     
-    public void init(int length){
-        setTable(new boolean[length]);
-        
+    public Che(int length) {
+        this.table = new boolean[length];
+        this.list = new ArrayList<>();
     }
 
     public void setTable(boolean[] table){
@@ -14,5 +18,13 @@ public class Che {
 
     public boolean[] getTable(){
         return this.table;
+    }
+
+    public void setList(List<Integer> list){
+        this.list = list;
+    }
+
+    public List<Integer> getList(){
+        return this.list;
     }
 }
