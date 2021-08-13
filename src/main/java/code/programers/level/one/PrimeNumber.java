@@ -1,6 +1,5 @@
 package code.programers.level.one;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import solution.Che;
@@ -8,17 +7,17 @@ import solution.Che;
 public class PrimeNumber {
     boolean[] table;
     List<Integer> list;
-    Che che;
 
     public PrimeNumber() {
-        che = new Che();
+        
     }
 
     public void init(int length)
     {
-        che.init(length);
-        table = che.getTable();
-        list = new ArrayList<>();
+        Che che = new Che(length);
+        
+        this.table = che.getTable();
+        this.list = che.getList();
     }
 
     void check(int number, int end)
