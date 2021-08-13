@@ -34,4 +34,18 @@ public abstract class Number {
 
         return true;
     }
+
+    public static int extractInt(int[] indexArray, int[] intArray){
+        int intValue = 0;
+        StringBuilder sb = new StringBuilder();
+
+        for(int index: indexArray){
+            if(intValue != 0 || intArray[index] != 0){
+                sb.append(intArray[index]);
+                intValue = Integer.parseInt(sb.toString());
+            }
+        }
+
+        return intValue;
+    }
 }
