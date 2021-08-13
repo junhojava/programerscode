@@ -2,12 +2,12 @@ package code.programers.level.one;
 
 import java.util.List;
 
-import solution.Che;
+import solution.Sieve;
 
 public class PrimeNumber {
     boolean[] table;
     List<Integer> list;
-    Che che;
+    Sieve sieve;
 
     public PrimeNumber() {
         
@@ -15,15 +15,15 @@ public class PrimeNumber {
 
     public void init(int length)
     {
-        che = new Che(length);
+        sieve = new Sieve(length);
         
-        this.table = che.getTable();
-        this.list = che.getList();
+        this.table = sieve.getTable();
+        this.list = sieve.getList();
     }
 
     public int primeNumber(int number)
     {
-        che.visitIndex(number);
+        sieve.visitIndex(number);
 
         return list.size();
     }

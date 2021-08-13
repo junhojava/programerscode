@@ -3,15 +3,20 @@ package solution;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Che {
+/**
+ * eratosthenes al
+ * @version 1.0
+ * 
+ */
+public class Sieve {
     private boolean[] table;
     List<Integer> list;
 
-    public Che(){
+    public Sieve(){
 
     }
     
-    public Che(int length) {
+    public Sieve(int length) {
         this.length(length);
     }
 
