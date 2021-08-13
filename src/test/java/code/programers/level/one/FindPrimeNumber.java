@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import datatype.Number;
 import solution.Sieve;
 
-public class PrimeNumberTest {
+public class FindPrimeNumber {
 
     Sieve sieve = new Sieve();
 
