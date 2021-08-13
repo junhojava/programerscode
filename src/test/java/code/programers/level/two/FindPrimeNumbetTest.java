@@ -14,23 +14,29 @@ import solution.Sieve;
 
 public class FindPrimeNumbetTest {
 
+    AlterKey ak;
+    BiggestNumber bn;
+    Sieve sieve;
+
     @Test
     void testCaseOne()
     {
-        Sieve sieve = new Sieve();
-        BiggestNumber bn = new BiggestNumber();
-        AlterKey ak = new AlterKey();
-
-        bn.list = new ArrayList<>();
+        int result = 1;
         int max = 0;
-        Map<Integer, Boolean> map = new HashMap<>();
-        int count = 1;
 
         String numbers = "011";
         int[] strArray = new int[numbers.length()];
+        Map<Integer, Boolean> map = new HashMap<>();
 
-        for(int index=0; index< strArray.length; index++)
+        ak = new AlterKey();
+        bn = new BiggestNumber();
+        sieve = new Sieve();
+
+        bn.list = new ArrayList<>();
+
+        for(int index=0; index< strArray.length; index++){
             strArray[index] = Integer.parseInt(numbers.substring(index, index+1));
+        }
 
         int[] akArray = ak.columns(strArray.length);
         int[][] combination = ak.dimension(akArray);
@@ -39,8 +45,8 @@ public class FindPrimeNumbetTest {
             bn.list.add(arr);
         }
 
-        while(count < strArray.length){
-            count++;
+        while(result < strArray.length){
+            result++;
 
             combination = ak.combination(akArray, combination);
 
@@ -62,14 +68,14 @@ public class FindPrimeNumbetTest {
         sieve.length(max + 1);
         sieve.visitIndex(max);
 
-        count = 0;
+        result = 0;
 
         for(Entry<Integer, Boolean> entry : map.entrySet()){
             if(sieve.getList().contains(entry.getKey())){
-                count++;
+                result++;
             }
         }
 
-        assertEquals(2, count);
+        assertEquals(2, result);
     }
 }
