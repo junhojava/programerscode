@@ -7,6 +7,7 @@ import solution.Che;
 public class PrimeNumber {
     boolean[] table;
     List<Integer> list;
+    Che che;
 
     public PrimeNumber() {
         
@@ -14,7 +15,7 @@ public class PrimeNumber {
 
     public void init(int length)
     {
-        Che che = new Che(length);
+        che = new Che(length);
         
         this.table = che.getTable();
         this.list = che.getList();
@@ -22,7 +23,7 @@ public class PrimeNumber {
 
     void check(int number, int end)
     {
-        list.add(number);
+        che.addListNumber(number);
         for(int index=1; index*number<=end; index++)
         {
             table[index*number] = true;

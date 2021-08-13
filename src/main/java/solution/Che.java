@@ -27,4 +27,8 @@ public class Che {
     public List<Integer> getList(){
         return this.list;
     }
+
+    public void addListNumber(int number){
+        getList().add(number);
+    }
 }
