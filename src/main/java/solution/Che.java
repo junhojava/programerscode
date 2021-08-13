@@ -6,10 +6,13 @@ import java.util.List;
 public class Che {
     private boolean[] table;
     List<Integer> list;
+
+    public Che(){
+
+    }
     
     public Che(int length) {
-        this.table = new boolean[length];
-        this.list = new ArrayList<>();
+        this.length(length);
     }
 
     public void setTable(boolean[] table){
@@ -30,5 +33,25 @@ public class Che {
 
     public void addListNumber(int number){
         getList().add(number);
+    }
+
+    public void multiple(int multipleNumber, int endNumber){
+        for(int index=1; index*multipleNumber <= endNumber ; index++){
+            table[index*multipleNumber] = true;
+        }
+    }
+
+    public void visitIndex(int endNumber){
+        for(int index = 2; index <= endNumber; index++){
+            if(!table[index]){
+                addListNumber(index);
+                multiple(index, endNumber);
+            }
+        }
+    }
+
+    public void length(int length){
+        this.table = new boolean[length];
+        this.list = new ArrayList<>();
     }
 }

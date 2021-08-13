@@ -21,22 +21,9 @@ public class PrimeNumber {
         this.list = che.getList();
     }
 
-    void check(int number, int end)
-    {
-        che.addListNumber(number);
-        for(int index=1; index*number<=end; index++)
-        {
-            table[index*number] = true;
-        }
-    }
-
     public int primeNumber(int number)
     {
-        for(int index=2; index<=number; index++)
-        {
-            if(!table[index])
-                check(index, number);
-        }
+        che.visitIndex(number);
 
         return list.size();
     }

@@ -8,9 +8,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 import datatype.Number;
+import solution.Che;
 
 public class PrimeNumberTest {
 
+    Che che = new Che();
     PrimeNumber pn = new PrimeNumber();
 
     public boolean[] booleanArray(int length){
@@ -25,9 +27,9 @@ public class PrimeNumberTest {
     @Test
     void tsetInit()
     {
-        pn.init(10);
+        che.length(10);
 
-        assertArrayEquals(booleanArray(10), pn.table);
+        assertArrayEquals(booleanArray(10), che.getTable());
     }
 
     @Test
