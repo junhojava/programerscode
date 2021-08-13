@@ -32,7 +32,7 @@ public class PrimeNumberTest {
     }
 
     @Test
-    void testCaseOne()
+    void testCase()
     {
         che.length(11);
         che.visitIndex(10);
@@ -43,16 +43,5 @@ public class PrimeNumberTest {
         assertTrue(Number.isPrimeNumber(3));
         assertTrue(Number.isPrimeNumber(11));
         assertFalse(Number.isPrimeNumber(10));
-    }
-
-    @Test
-    void testCaseTwo()
-    {
-        che.length(6);
-
-        che.visitIndex(5);
-        int count = che.getList().size();
-
-        assertEquals(3, count);
     }
 }
