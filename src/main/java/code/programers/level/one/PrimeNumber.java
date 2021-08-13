@@ -3,13 +3,21 @@ package code.programers.level.one;
 import java.util.ArrayList;
 import java.util.List;
 
+import solution.Che;
+
 public class PrimeNumber {
     boolean[] table;
     List<Integer> list;
+    Che che;
+
+    public PrimeNumber() {
+        che = new Che();
+    }
 
     public void init(int length)
     {
-        table = new boolean[length];
+        che.init(length);
+        table = che.getTable();
         list = new ArrayList<>();
     }
 
