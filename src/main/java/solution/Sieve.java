@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * eratosthenes al
+ * eratosthenes algorithm for extract prime number
  * @version 1.0
  * 
  */
